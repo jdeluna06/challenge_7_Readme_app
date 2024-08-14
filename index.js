@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 import fs from 'fs';
 import inquirer from 'inquirer';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -39,7 +40,8 @@ const questions = [
   {
     type: "list",
     message: "Select a license.",
-    choices: ["MIT", "GPLv3", "Apache 2.0", "BSD 3-Clause"],
+    choices: ["MIT", "GPLv3", "Apache 2.0", "BSD 3-Clause", "None"],
+    name: "license",
   },
 
   {
@@ -67,7 +69,22 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions).then((answers) => {
+    const markdown = generateMarkdown(answers);
+    writeToFile("README.md", markdown);
+  })
+
+}
+
+
+
+
+
+
 
 // Function call to initialize app
 init();
+
+
+

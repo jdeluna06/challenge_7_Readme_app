@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-    if (!license) {
+function renderLicenseBadge(license) {
+    if (license === "None") {
       return "";
     }
 
@@ -17,53 +17,68 @@ function renderLicenseBadge(license) {}
       default:
         return "";
     }
-    
+  }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-     if (!license) {
+     if (license === "None") {  
        return "";
      }
-
-     switch (license) {
-       case "MIT":
-         return "https://opensource.org/licenses/MIT";
-       case "GPLv3":
-         return "https://www.gnu.org/licenses/gpl-3.0";
-       case "Apache 2.0":
-         return "https://www.apache.org/licenses/LICENSE-2.0";
-       case "BSD 3-Clause":
-         return "https://opensource.org/licenses/BSD-3-Clause";
-       default:
-         return "";
-     }
+return`- [License](#license)`
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-      if (!license) {
+      if (license === "None") {
         return "";
-      }
+      } 
 
-      const licenseLink = renderLicenseLink(license);
-      return `## License
+    return `## License
 
-This project is licensed under the ${license} License. For more information, please visit [this link](${licenseLink}).
-`;
+This project is licensed under the ${license} License.`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-   const licenseBadge = renderLicenseBadge(data.license);
-   const licenseSection = renderLicenseSection(data.license);
+  
+
 
   return `# ${data.title}
+${renderLicenseBadge(data.license)}
+  
 
-  ${licenseBadge}
 
-${licenseSection}
+## Description
+${data.description}
+
+
+## Table of Contents 
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+${renderLicenseLink(data.license)}
+
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+
+## Credits
+${data.credits}
+
+${renderLicenseSection(data.license)}
+
+## Features
+${data.features}
+
+## Tests
+${data.test}
 `;
 }
 
