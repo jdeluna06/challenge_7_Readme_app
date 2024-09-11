@@ -15,6 +15,7 @@
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Walkthrough Video:##](#walkthrough-video)
   - [Credits](#credits)
   - [License](#license)
   - [Features](#features)
@@ -35,6 +36,9 @@ To install the README.md Generator, follow these steps:
 
 After installation, you can generate a README by running the following command: node index.js
 
+## Walkthrough Video:##
+   For a detailed walkthrough of how the application works, please refer to the video linked below:
+    https://drive.google.com/file/d/12G0a_qX2WG7vrTaMA3odjIPEBK2Yj2zF/view?usp=sharing
 
 ## Credits
 - **Joel De Luna** - Developer

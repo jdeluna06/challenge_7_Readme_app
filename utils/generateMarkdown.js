@@ -60,7 +60,9 @@ ${data.description}
 - [Usage](#usage)
 - [Credits](#credits)
 ${renderLicenseLink(data.license)}
-
+- [Features](#features)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -79,6 +81,9 @@ ${data.features}
 
 ## Tests
 ${data.test}
+
+## Questions
+If you have any questions you can email me at ${data.email}.  If you want to see more of my work you can find me on GitHub at [${data.GitHub}](https://GitHub.com/${data.GitHub}).
 `;
 }
 
